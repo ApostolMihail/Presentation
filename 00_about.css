@@ -684,3 +684,38 @@ header h1 {
         left: -9vw;
     }
 }
+
+@media screen and (max-width: 601px) and (max-height: 900px) {
+    .overlay {
+        width: 75%;
+        height: 10%;
+    }
+
+    .effects::after {
+        width: 75vw;
+        height: 30vh;
+        top: -5vh;
+        left: -5vw;
+    }
+    
+    .effects::before {
+        width: 83vw;
+        height: 23vh;
+        top: -2vh;
+        left: -9vw;
+    }
+    
+    .about:hover .effects::after {
+        width: 75vw;
+        height: 27.5vh;
+        top: -7vh;
+        left: -5vw;
+    }
+    
+    .about:hover .effects::before {
+        width: 85vw;
+        height: 23vh;
+        top: -5vh;
+        left: -9vw;
+    }
+}
