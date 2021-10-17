@@ -43,6 +43,7 @@
     grid-area: contact;
     overflow-y: scroll;
     animation: 1s ease-out 0s 1 slideInFromRight;
+    width: 100%;
 }
 
 @keyframes slideInFromRight {
@@ -184,6 +185,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .contact {
+        overflow-y:unset;
+    }
+
     .margin {
         margin: 20px;
     }
@@ -225,6 +230,10 @@
     .pages a {
         font-size: 1.5rem;
         padding: 0.7rem;
+        text-align: center;
+    }
+
+    .pages a:hover {
         text-align: center;
     }
 

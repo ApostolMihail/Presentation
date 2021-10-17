@@ -92,10 +92,18 @@
     display: none;
 }
 
-@media screen and (max-width: 768px) {           
+@media screen and (max-width: 768px) {
+    .projects {
+        overflow-y: unset;
+    }
+    
     .pages a {
         font-size: 1.5rem;
         padding: 0.7rem;
+        text-align: center;
+    }
+
+    .pages a:hover {
         text-align: center;
     }
     
