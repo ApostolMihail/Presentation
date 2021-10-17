@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-areas: 
+    "links projects projects projects projects projects projects";
+    height: 100vh;
+}
+
+.projects {
+    grid-area: projects;
+    overflow-y: scroll;
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+}
+
+.margin {
+    margin: 30px;
+}
+
+.pages {
+    grid-area: links;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    background-color: black;
+    height: 100vh;
+}
+
+.pages a {
+    text-decoration: none;
+    color: white;
+    font-size: 3em;
+    text-align: left;
+    width: 90%;
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 3px 3px 2px gray;
+}
+
+.pages a:hover {
+    width: 90%;
+    height: 10%;
+    color:black;
+    background-color: white;
+    text-align:right;
+}
+
+
+.projects header h1 {
+    font-size: 3em;
+    background-color: coral;
+    box-shadow: 3px 3px 5px black;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 15px;
+    font-size: 1.6em;
+    width: 30%;
+    text-align: right;
+    box-shadow: inset 1px 1px 100px 1px;
+}
+
+.projectName {
+    background-color: rgba(161, 154, 152, 0);
+    padding: 10px;
+    box-shadow: inset 0px 0px 10px 2px rgba(255, 255, 255, 0.514);
+}
+
+.nav-container .checkbox {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {           
+    .pages a {
+        font-size: 1.5rem;
+        padding: 0.7rem;
+        text-align: center;
+    }
+    
+    .projects header h1 {
+        font-size: 2em;
+        box-shadow: none;
+    }
+
+    .project {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .nav-container {
+        display: block;
+        position: relative;
+        height: 60px;
+        width: 100%;
+        z-index: 10;
+    } 
+      
+    .nav-container .checkbox {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 32px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    
+    .pages {
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: transform 0.5s ease-in-out;
+        text-align: center;
+        z-index: 100;
+    }
+            
+    .nav-container input[type="checkbox"]:checked ~ .pages {
+        transform: translateX(0);
+    }
+      
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+        transform: rotate(45deg);
+    }
+      
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+        transform: scaleY(0);
+    }
+      
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+        transform: rotate(-45deg);
+    }
+
+    .nav-container .hamburger-lines {
+        display: block;
+        height: 26px;
+        width: 32px;
+        position: absolute;
+        top: 17px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+      
+    .nav-container .hamburger-lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: coral;
+    }
+      
+    .nav-container .hamburger-lines .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+      
+    .nav-container .hamburger-lines .line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+      
+    .nav-container .hamburger-lines .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .gridContainer {
+        display: grid;
+        grid-template-areas: 
+        "links"
+        "projects";
+        height: 100vh;
+    }
+}

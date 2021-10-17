@@ -1,0 +1,129 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+}
+
+.gridContainer {
+    display: grid;
+    grid-auto-columns: 50%;
+    grid-auto-flow: column;
+    height: 100vh;
+    border: 5px solid black;
+    overflow: hidden;
+}
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages a {
+    text-decoration: none;
+    color: black;
+    font-size: 4em;
+    text-align: center;
+    /* width: 100%; */
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 5px 5px 10px;
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1%;
+    border-bottom: 1px solid red;
+    background-color: red;
+    box-shadow: 1px 1px 1px 10px red;
+    left: -1px;
+    top: 35px;
+    z-index: -1;
+    transform: scale(0, 0);
+    transition: transform 200ms linear;
+    /* transform-origin: left; */
+}
+
+a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1%;
+    border-bottom: 1px solid red;
+    box-shadow: 1px 1px 1px 10px red;
+    left: -1px;
+    top: 35px;
+    z-index: -1;
+    transform: scale(1, 1); /* or scale(1, 1.1) to create a little white line in the middle*/
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 4.5em;
+    color: white;
+    background-color: black;
+}
+
+.apostol,
+.mihail,
+.octavian {
+    background-image: linear-gradient(1deg, white, gray, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: bg-animation 1s infinite;
+}
+
+@keyframes bg-animation {
+    0% {background-position: left;}
+    50% {background-position: right}
+    100% {background-position: left}
+}
+
+@media screen and (max-width: 768px) {
+    .gridContainer {
+        display: grid;
+        grid-auto-columns: 100%;
+        grid-auto-flow: row;
+        height: 200vh;
+        border: none;
+        overflow: hidden;
+    }
+
+    .pages a {
+        font-size: 3em;
+        margin: 40px;
+    }
+
+    .pages {
+        height: 100vh;
+    }
+    
+    .name {
+        height: 100vh;
+        font-size: 3em;
+    }
+}
+
