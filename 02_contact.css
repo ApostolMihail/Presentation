@@ -78,7 +78,7 @@
     grid-template-areas: "contact infos";
 }
 
-.formContainer {
+.contactAndInfo form {
     grid-area: contact;
     display: flex;
     flex-direction: column;
