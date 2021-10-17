@@ -693,8 +693,8 @@ header h1 {
 
     .effects::after {
         width: 75vw;
-        height: 30vh;
-        top: -5vh;
+        height: 27.5vh;
+        top: -8vh;
         left: -5vw;
     }
     
@@ -706,10 +706,10 @@ header h1 {
     }
     
     .about:hover .effects::after {
-        width: 75vw;
-        height: 27.5vh;
-        top: -8vh;
-        left: -5vw;
+        width: 85vw;
+        height: 23vh;
+        top: -6vh;
+        left: -9vw;
     }
     
     .about:hover .effects::before {
